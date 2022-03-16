@@ -12,7 +12,7 @@
 class Solution {
 public:
     bool isValidBST(TreeNode* root) {
-        return isBST(root,NULL);
+        return isBST(root,NULL,NULL);
         
     }
     bool isBST(TreeNode* root, TreeNode* l=NULL, TreeNode* r=NULL)
@@ -34,7 +34,7 @@ public:
         return false;
  
     // check recursively for every node.
-    return isBST(root->left, l, root) and
+    return isBST(root->left, l, root) &&
            isBST(root->right, root, r);
 }
 };
